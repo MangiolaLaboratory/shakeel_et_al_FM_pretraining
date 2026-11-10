@@ -2,7 +2,7 @@
 
 Code and resources for reproducing benchmarks that evaluate the benefit of pretraining scale in single-cell foundation models.
 
-> **Project status:** Code refactoring is in progress. Pretrained models and task-specific fine-tuning datasets are available for download and can be used with the task-specific fine-tuning scripts.
+> **Project status:** Code refactoring is in progress. Pretrained models and task-specific fine-tuning datasets are available for download and can be used with the task-specific fine-tuning scripts. Paths to the models and dataset should be adpated inside each script.
 
 ## Contents
 
