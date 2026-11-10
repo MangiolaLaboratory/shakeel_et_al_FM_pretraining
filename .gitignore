@@ -6,3 +6,5 @@
 *.gz
 *.zip
 *.tar
+*.ipynb_checkpoints
+*.err
