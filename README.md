@@ -135,6 +135,7 @@ Because the tokenized data occupy several hundred gigabytes, please contact the 
 
 ## Roadmap
 
+- [ ] Separate CFG for each finetuning and perturbation task.
 - [ ] Create a single entry point for pretraining.
 - [ ] Create example notebooks for fine-tuning.
 - [ ] Create an example notebook for embedding-based network analysis.
