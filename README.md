@@ -15,6 +15,8 @@ Code and resources for reproducing benchmarks that evaluate the benefit of pretr
 
 ## Getting started
 
+Create the environment using `requirements.txt` file.
+
 ### 1. Clone the repository
 
 Clone this repository and open its root directory. Replace the placeholders below with the repository URL and directory name:
@@ -128,6 +130,9 @@ Tokenized pretraining datasets are available for both the **10M** and **104M** m
 
 Because the tokenized data occupy several hundred gigabytes, please contact the authors to arrange access.
 
+## Perturbation prediction code
+
+
 ## Roadmap
 
 - [ ] Create a single entry point for pretraining.
@@ -153,3 +158,5 @@ If you use this work, please cite:
 ## Acknowledgments
 
 This repository includes modified Geneformer code. Credit for the original Geneformer implementation belongs to its authors. The modifications described above enable the layer-freezing settings used in this study.
+
+Addtionally, this repository contains code for perturbation prediction made available by **[Ahlmann-Eltze et al.](https://github.com/const-ae/linear_perturbation_prediction-Paper/tree/main/benchmark)**

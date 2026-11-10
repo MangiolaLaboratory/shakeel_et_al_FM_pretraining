@@ -1,0 +1,119 @@
+Genes to classify ['ENSG00000177946', 'ENSG00000249459', 'ENSG00000215271', 'ENSG00000214189', 'ENSG00000196381'] are not in token dictionary.
+0it [00:00, ?it/s]Some weights of BertForTokenClassification were not initialized from the model checkpoint at /hpcfs/groups/phoenix-hpc-mangiola_laboratory/haroon/geneformer/trained_foundation_models/models/104M_AGGrandom_500000_12_emb768_SL4096_E3_B12_LR0.0002_LScosine_WU0_Oadamw/final_trained_model/random_500000 and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+
+  0%|          | 0/630 [00:00<?, ?it/s][A/scratchdata1/groups/phoenix-hpc-mangiola_laboratory/haroon/full_frozen_geneformer/Geneformer/geneformer/collator_for_classification.py:649: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  batch = {k: torch.tensor(v.clone().detach(), dtype=torch.int64) if isinstance(v, torch.Tensor) else torch.tensor(v, dtype=torch.int64) for k, v in batch.items()}
+0it [00:14, ?it/s]
+Traceback (most recent call last):
+  File "/scratchdata1/groups/phoenix-hpc-mangiola_laboratory/haroon/full_frozen_geneformer/Geneformer/geneformer/random_subsampling_run_finetuning_drug_dosage_500000.py", line 215, in <module>
+    all_metrics = finetuner.finetune_model(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratchdata1/groups/phoenix-hpc-mangiola_laboratory/haroon/full_frozen_geneformer/Geneformer/geneformer/finetuner.py", line 363, in finetune_model
+    all_metrics = cc.validate(
+                  ^^^^^^^^^^^^
+  File "/scratchdata1/groups/phoenix-hpc-mangiola_laboratory/haroon/full_frozen_geneformer/Geneformer/geneformer/classifier.py", line 1065, in validate
+    trainer = self.train_classifier(
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratchdata1/groups/phoenix-hpc-mangiola_laboratory/haroon/full_frozen_geneformer/Geneformer/geneformer/classifier.py", line 1532, in train_classifier
+    trainer.train()
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/trainer.py", line 2241, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/trainer.py", line 3698, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/trainer.py", line 3759, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 193, in forward
+    outputs = self.parallel_apply(replicas, inputs, module_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 212, in parallel_apply
+    return parallel_apply(
+           ^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/parallel/parallel_apply.py", line 126, in parallel_apply
+    output.reraise()
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/_utils.py", line 733, in reraise
+    raise exception
+torch.OutOfMemoryError: Caught OutOfMemoryError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/parallel/parallel_apply.py", line 96, in _worker
+    output = module(*input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/models/bert/modeling_bert.py", line 1867, in forward
+    outputs = self.bert(
+              ^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/models/bert/modeling_bert.py", line 1142, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/models/bert/modeling_bert.py", line 695, in forward
+    layer_outputs = layer_module(
+                    ^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/models/bert/modeling_bert.py", line 627, in forward
+    layer_output = apply_chunking_to_forward(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/pytorch_utils.py", line 261, in apply_chunking_to_forward
+    return forward_fn(*input_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/models/bert/modeling_bert.py", line 639, in feed_forward_chunk
+    intermediate_output = self.intermediate(attention_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/transformers/models/bert/modeling_bert.py", line 540, in forward
+    hidden_states = self.intermediate_act_fn(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 133, in forward
+    return F.relu(input, inplace=self.inplace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/a1236507/anaconda3/envs/geneformer/lib/python3.11/site-packages/torch/nn/functional.py", line 1704, in relu
+    result = torch.relu(input)
+             ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.00 GiB. GPU 0 has a total capacity of 39.41 GiB of which 2.40 GiB is free. Including non-PyTorch memory, this process has 37.01 GiB memory in use. Of the allocated memory 34.40 GiB is allocated by PyTorch, and 1.04 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+  0%|          | 0/630 [00:04<?, ?it/s]
